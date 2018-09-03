@@ -8,9 +8,12 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 # Create your views here.
+from location.models import Shop
+
 
 @api_view(['GET'])
 def section_a(request,list_num):
+    print(Shop.objects(location='a'))
     print(type(list_num))
     print('section_a')
     return Response('section_a')

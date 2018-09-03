@@ -13,8 +13,26 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import mongoengine
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': '',
+#         'NAME': '',
+#     }
+# }
+
+DBNAME='bazaar'
+
+mongoengine.connect(
+    db='bazaar',
+    username='root',
+    password='root',
+    authentication_source='root',
+    host='mongodb://root:root@localhost/27017'
+)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
