@@ -6,7 +6,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 # Create your views here.
-# from BazaarServer.settings import DBNAME
 from BazaarServer.settings import collection
 
 SECTION_A = 'a'
