@@ -14,25 +14,11 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import mongoengine
+import pymongo
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': '',
-#         'NAME': '',
-#     }
-# }
 
-DBNAME='bazaar'
-
-mongoengine.connect(
-    db='bazaar',
-    username='root',
-    password='root',
-    authentication_source='root',
-    host='mongodb://root:root@localhost/27017'
-)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -115,7 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+conn = pymongo.MongoClient('localhost',27017)
+db = conn.get_database('bazaar')
+collection = db.get_collection('shop')
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
