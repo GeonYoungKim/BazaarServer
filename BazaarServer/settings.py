@@ -28,7 +28,7 @@ SECRET_KEY = 'y(-eurnk(g=fe!g4=a2mqlpa4+-1e*kscr#ddopb000u65f=8m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.125.128.130']
+ALLOWED_HOSTS = ['13.125.128.130','127.0.0.1','localhost']
 
 # Application definition
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'location',
     'category',
     'notice',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
