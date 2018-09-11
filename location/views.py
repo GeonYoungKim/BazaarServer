@@ -35,8 +35,7 @@ def get_location_shop(section,list_num):
 @api_view(['GET'])
 def section_a(request, list_num):
     print('section_a')
-    return Response("section_a")
-    # return get_location_shop(SECTION_A,list_num)
+    return get_location_shop(SECTION_A,list_num)
 
 
 
