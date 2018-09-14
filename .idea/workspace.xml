@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37ac9aaf-149f-49a6-9b98-3f5ea8691481" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/category/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/b/1-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/b/1-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/c/1-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/c/1-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/d/1-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/d/1-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/e/1-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bazaar_img/e/1-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BazaarServer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BazaarServer/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BazaarServer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BazaarServer/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/location/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/location/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bazaar_img/a/1/image_01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bazaar_img/a/1/image_02.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,44 +18,45 @@
         <counts>
           <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="16" />
+          <entry key="py" value="20" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="16" />
+          <entry key="Python" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3130" />
+          <entry key="py" value="3393" />
           <entry key="txt" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="3130" />
+          <entry key="Python" value="3393" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41113842">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -80,11 +68,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/BazaarServer/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2014">
-                  <caret line="110" selection-start-line="110" selection-end-line="110" />
+                <state relative-caret-position="542">
+                  <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
                   <folding>
                     <element signature="e#317#326#0" expanded="true" />
                   </folding>
@@ -101,11 +89,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/BazaarServer/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="137">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                <state relative-caret-position="350">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
                   <folding>
                     <element signature="e#646#678#0" expanded="true" />
                   </folding>
@@ -116,11 +104,12 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/category/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
+                <state relative-caret-position="37">
+                  <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
                   <folding>
-                    <marker date="1536681167906" expanded="true" signature="314:1045" ph="..." />
-                    <marker date="1536681167906" expanded="true" signature="1097:1102" ph="..." />
+                    <element signature="e#24#63#0" expanded="true" />
+                    <marker date="1536887141775" expanded="true" signature="328:806" ph="..." />
+                    <marker date="1536887141775" expanded="true" signature="858:863" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -152,39 +141,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+        <leaf>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/location/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="37" column="31" selection-end-line="61" />
+                <state relative-caret-position="14">
+                  <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
                   <folding>
                     <element signature="e#24#63#0" expanded="true" />
-                    <marker date="1536678418180" expanded="true" signature="325:327" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/location/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="9" column="10" selection-end-line="10" selection-end-column="1" />
-                  <folding>
-                    <element signature="e#0#28#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/category/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#0#28#0" expanded="true" />
+                    <marker date="1536885919780" expanded="true" signature="325:327" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -226,20 +191,20 @@
       <list>
         <option value="$PROJECT_DIR$/location/models.py" />
         <option value="$PROJECT_DIR$/static/test1.txt" />
-        <option value="$PROJECT_DIR$/BazaarServer/settings.py" />
-        <option value="$PROJECT_DIR$/location/views.py" />
-        <option value="$PROJECT_DIR$/category/views.py" />
         <option value="$PROJECT_DIR$/location/urls.py" />
         <option value="$PROJECT_DIR$/category/urls.py" />
         <option value="$PROJECT_DIR$/BazaarServer/urls.py" />
+        <option value="$PROJECT_DIR$/location/views.py" />
+        <option value="$PROJECT_DIR$/category/views.py" />
+        <option value="$PROJECT_DIR$/BazaarServer/settings.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -345,9 +310,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19299406" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10063224" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -358,7 +324,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3617021" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.16052061" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -400,31 +366,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BazaarServer/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2014">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="e#317#326#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/db/backends/base/introspection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/category/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <marker date="1536681167906" expanded="true" signature="314:1045" ph="..." />
-            <marker date="1536681167906" expanded="true" signature="1097:1102" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -445,10 +390,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/category/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/location/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BazaarServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="350">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#646#678#0" expanded="true" />
           </folding>
@@ -457,31 +422,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/location/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="37" column="31" selection-end-line="61" />
+        <state relative-caret-position="14">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1536678418180" expanded="true" signature="325:327" ph="..." />
+            <marker date="1536885919780" expanded="true" signature="325:327" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/location/urls.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/json/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="10" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="89">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/category/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#24#63#0" expanded="true" />
+            <marker date="1536887141775" expanded="true" signature="328:806" ph="..." />
+            <marker date="1536887141775" expanded="true" signature="858:863" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/category/urls.py">
+    <entry file="file://$PROJECT_DIR$/BazaarServer/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="542">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#317#326#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-
+import pymongo
 from BazaarServer.settings import collection
 
 CLOTH = "1"
@@ -15,26 +15,20 @@ DIGITAL = "6"
 
 def get_category(category_num,list_num):
     shops = list(collection
-                 .find(
-                {
-                    "goods.category": category_num
-                }
-                ,
-                {
-                    "_id": False,
-                    "goods": {"$elemMatch":{"category":category_num}},
-                    "no":True,
-                    "location": True,
-                    "shop": True,
-                    "goods.name": True,
-                    "goods.price": True,
-                    "goods.quantity": True,
-                    "goods.category": True,
-                    "goods.image": True
-                })
-                 .skip((list_num - 1) * 10)
-                 .limit(10)
-                 )
+        .aggregate(
+            [
+                {"$match":{"goods.category":category_num}}
+                ,{"$project":{"_id":0}}
+                ,{"$unwind":"$goods"}
+                ,{"$match":{"goods.category":category_num}}
+                ,{"$skip":(list_num-1)*10}
+                ,{"$limit":10}
+            ]
+        )
+    )
+    for shop in shops:
+        shop["good"] = shop["goods"]
+        shop.pop("goods")
     return Response(shops)
 
 @api_view(['GET'])

@@ -25,7 +25,7 @@ def get_location_shop(section,list_num):
         {
             "_id": False,
         })
-                 .sort(
+                  .sort(
         [("no", pymongo.ASCENDING)])
                  .skip((list_num - 1) * 10)
                  .limit(10)

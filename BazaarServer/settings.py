@@ -122,6 +122,38 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+     # 로그가 찍힐때 formatting이 어떻게 될것인가
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(levelname)s: %(message)s'
+        },
+    },
+
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+
+        },
+        'logfile': {
+            'level':'INFO',
+            'class':'logging.FileHandler',
+            'filename': "log/service.log",
+            'formatter': 'simple'
+
+
+        },
+    },
+    'root': {
+        'level': 'INFO',
+        'handlers': ['console', 'logfile']
+    },
+}
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
