@@ -125,7 +125,6 @@ USE_TZ = True
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-     # 로그가 찍힐때 formatting이 어떻게 될것인가
     'formatters': {
         'simple': {
             'format': '%(asctime)s %(levelname)s: %(message)s'
