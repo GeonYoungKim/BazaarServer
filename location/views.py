@@ -37,9 +37,6 @@ def section_a(request, list_num):
     print('section_a')
     return get_location_shop(SECTION_A,list_num)
 
-
-
-
 @api_view(['GET'])
 def section_b(request, list_num):
     print('section_b')
