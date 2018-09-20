@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 # Create your views here.
-from BazaarServer.settings import collection
+from BazaarServer.settings import shop_collection
 
 SECTION_A = 'a'
 SECTION_B = 'b'
@@ -16,7 +16,7 @@ SECTION_E = 'e'
 
 
 def get_location_shop(section,list_num):
-    shops = list(collection
+    shops = list(shop_collection
                  .find(
         {
             "location": section
@@ -30,7 +30,16 @@ def get_location_shop(section,list_num):
                  .skip((list_num - 1) * 10)
                  .limit(10)
         )
-    return Response(shops)
+    meta = list(shop_collection.aggregate(
+        [
+            {"$group":{"_id":"null","count":{"$sum":1}}},
+            {"$project":{"_id":0}}
+        ]
+    ))
+    data = {}
+    data['items']=shops
+    data['meta'] = meta[0]
+    return Response(data)
 
 @api_view(['GET'])
 def section_a(request, list_num):

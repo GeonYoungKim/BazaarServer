@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     path('location/section/',include('location.urls')),
     path('category/', include('category.urls')),
+    path('notice/',include('notice.urls')),
 
 ]

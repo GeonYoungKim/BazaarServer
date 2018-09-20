@@ -108,7 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 conn = pymongo.MongoClient('localhost',27017)
 db = conn.get_database('bazaar')
-collection = db.get_collection('shop')
+shop_collection = db.get_collection('shop')
+notice_collection = db.get_collection('notice')
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 

@@ -6,7 +6,7 @@ import logging
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import pymongo
-from BazaarServer.settings import collection
+from BazaarServer.settings import shop_collection
 
 CLOTH = "1"
 ETC = "2"
@@ -18,7 +18,7 @@ DIGITAL = "6"
 logger = logging.getLogger("category")
 
 def get_category(category_num,list_num):
-    shops = list(collection
+    shops = list(shop_collection
         .aggregate(
             [
                 {"$match":{"goods.category":category_num}}
@@ -30,12 +30,28 @@ def get_category(category_num,list_num):
             ]
         )
     )
+    meta = list(shop_collection
+        .aggregate(
+        [
+            {"$match": {"goods.category": category_num}}
+            , {"$project": {"_id": 0}}
+            , {"$unwind": "$goods"}
+            , {"$match": {"goods.category": category_num}}
+            ,{"$group":{"_id":"null","count":{"$sum":1}}}
+            ,{"$project":{"_id":0}}
+        ]
+    )
+    )
+    print(meta)
+    data = {}
     logger.info("mongod db")
     for shop in shops:
         shop["good"] = shop["goods"]
         shop.pop("goods")
+    data['items'] = shops
+    data['meta'] = meta[0]
     logger.info("change shops")
-    return Response(shops)
+    return Response(data)
 
 @api_view(['GET'])
 def get_cloth(request, list_num):
