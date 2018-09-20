@@ -32,6 +32,7 @@ def get_location_shop(section,list_num):
         )
     meta = list(shop_collection.aggregate(
         [
+            {"$match":{"location":section}},
             {"$group":{"_id":"null","count":{"$sum":1}}},
             {"$project":{"_id":0}}
         ]
