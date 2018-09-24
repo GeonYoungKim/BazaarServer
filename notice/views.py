@@ -81,7 +81,12 @@ def search_title_or_contents(keyword,type,list_num):
             , {"$project": {"_id": 0}}
         ]
     ))
-    return Response(notices)
+    data = {}
+    data['items'] = notices
+    data['meta'] = {}
+    if len(meta) > 0:
+        data['meta'] = meta[0]
+    return Response(data)
 def search_titlecontents(keyword,list_num):
     data = {}
     notices = list(notice_collection
@@ -112,6 +117,9 @@ def search_titlecontents(keyword,list_num):
             , {"$project": {"_id": 0}}
         ]
     ))
+    data = {}
     data['items'] = notices
-    data['meta'] = meta[0]
+    data['meta'] = {}
+    if len(meta) > 0:
+        data['meta'] = meta[0]
     return Response(data)

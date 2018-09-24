@@ -41,11 +41,12 @@ def select_categorynum(category_num,list_num):
     for shop in shops:
         shop["good"] = shop["goods"]
         shop.pop("goods")
+
     data['items'] = shops
+    data['meta'] = {}
     if len(meta) > 0:
         data['meta'] = meta[0]
-    else:
-        data['meta'] = {}
+
     print(data)
     logger.info("change shops")
     return Response(data)
