@@ -22,5 +22,6 @@ urlpatterns = [
     path('location/section/',include('location.urls')),
     path('category/', include('category.urls')),
     path('notice/',include('notice.urls')),
+    path('user/',include('user.urls')),
 
 ]
