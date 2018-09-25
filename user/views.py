@@ -65,6 +65,7 @@ def findid(request):
     if user == None:
         return Response({"response": "fail"})
     else:
+        user.pop("pw")
         user['response'] = 'success'
         print()
         return Response(user)
