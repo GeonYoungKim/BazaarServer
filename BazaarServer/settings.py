@@ -111,6 +111,7 @@ db = conn.get_database('bazaar')
 shop_collection = db.get_collection('shop')
 notice_collection = db.get_collection('notice')
 user_collection = db.get_collection('user')
+apply_collection = db.get_collection('apply')
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
