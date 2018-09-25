@@ -7,7 +7,7 @@ from django.db import transaction
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from BazaarServer.settings import shop_collection, apply_collection
-
+from datetime import datetime
 
 @api_view(['GET'])
 def get_goods(request,shop):
@@ -43,8 +43,9 @@ def insert_goods(request):
 
 @api_view(['POST'])
 def apply(request):
-
+    now = datetime.now()
     json_body = json.loads(request.body.decode("utf-8"))
-    print(json_body)
+    json_body['date'] = '%s-%s-%s-%s-%s-%s' % ( now.year, now.month, now.day,now.hour,now.minute,now.second )
+    json_body['role'] = 1
     apply_collection.insert_one(json_body)
     return Response({"response":"success"})

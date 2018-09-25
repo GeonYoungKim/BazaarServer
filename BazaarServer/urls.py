@@ -24,4 +24,5 @@ urlpatterns = [
     path('notice/',include('notice.urls')),
     path('user/',include('user.urls')),
     path('seller/',include('seller.urls')),
+    path('apply/',include('admin.urls')),
 ]
