@@ -39,6 +39,43 @@ def get_apply(request,list_num):
 
 @api_view(['GET'])
 def random_assignment(request,count,list_num):
+    applies = list(apply_collection.aggregate(
+        [
+            {"$match": {"role": 1}},
+            {"$project": {
+                "_id": 0,
+                "id": 1,
+                "title": 1,
+                "contents": 1,
+                "role": 1,
+                "name": 1,
+                "date": 1
+            }}
+            ,{"$sample":{"size":count}}
+        ]
+    ))
+    for apply in applies:
+        apply_collection.update(
+            {
+                "id":apply['id']
+            },
+            {
+                "$set":{
+                    "role":2
+                }
+            }
+        )
+    apply_collection.update(
+        {
+            "role": 1
+        },
+        {
+            "$set": {
+                "role": 3
+            }
+        }
+    )
+
     return Response(select_all_apply(list_num))
 
 @api_view(['GET'])
