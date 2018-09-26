@@ -183,5 +183,6 @@ def send_admission(request):
         )
         shop_index += 1
 
+    apply_collection.delete_many({})
     #   파이어베이스 연동
     return Response(SUCCESS)

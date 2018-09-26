@@ -70,7 +70,18 @@ def apply(request):
     now = datetime.now()
     json_body = json.loads(request.body.decode("utf-8"))
     logger.info("request body -> " + str(json_body))
-    json_body['date'] = '%s-%s-%s-%s-%s-%s' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
-    json_body['role'] = 1
-    apply_collection.insert_one(json_body)
-    return Response(SUCCESS)
+    data = apply_collection.find_one(
+        {
+            "id":json_body['id']
+        },
+        {
+            "_id": False
+        }
+    )
+    if data==None:
+        json_body['date'] = '%s-%s-%s-%s-%s-%s' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
+        json_body['role'] = 1
+        apply_collection.insert_one(json_body)
+        return Response(SUCCESS)
+    else:
+        return Response(FAIL)
