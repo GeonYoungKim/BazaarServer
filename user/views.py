@@ -87,15 +87,3 @@ def findid(request):
         user.pop("pw")
         user['response'] = 'success'
         return Response(user)
-
-
-@api_view(['POST'])
-@parser_classes((FormParser, MultiPartParser))
-def upload_file(request):
-    image_uploaded = request.FILES["image_uploaded"]
-    # Should check if the file exists already before saving it
-    destination = open('static\\bazaar_img\\a\\' + image_uploaded.name, "wb+")
-    for chunk in image_uploaded.chunks():
-        destination.write(chunk)
-    destination.close()
-    return Response({'received request': "File saved"})

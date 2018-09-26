@@ -6,5 +6,4 @@ urlpatterns = [
     path('signin', signin),
     path('signup', signup),
     path('findid', findid),
-    path('upload',upload_file),
 ]
