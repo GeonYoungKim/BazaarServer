@@ -1,4 +1,5 @@
 import json
+import logging
 
 import pymongo
 from django.shortcuts import render
@@ -9,7 +10,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from BazaarServer.settings import apply_collection
 
-
+logger = logging.getLogger("admin")
 def select_all_apply(list_num):
     data = {}
     applies = list(apply_collection.aggregate(
@@ -33,27 +34,7 @@ def select_all_apply(list_num):
     data['meta'] = {'count':len(applies)}
     return data
 
-@api_view(['GET'])
-def get_apply(request,list_num):
-    return Response(select_all_apply(list_num))
-
-@api_view(['GET'])
-def random_assignment(request,count,list_num):
-    applies = list(apply_collection.aggregate(
-        [
-            {"$match": {"role": 1}},
-            {"$project": {
-                "_id": 0,
-                "id": 1,
-                "title": 1,
-                "contents": 1,
-                "role": 1,
-                "name": 1,
-                "date": 1
-            }}
-            ,{"$sample":{"size":count}}
-        ]
-    ))
+def give_apply_role(applies):
     for apply in applies:
         apply_collection.update(
             {
@@ -76,10 +57,42 @@ def random_assignment(request,count,list_num):
         }
     )
 
+@api_view(['GET'])
+def get_apply(request,list_num):
+    logger.info("get_apply")
+    logger.info("list_num_ ->"+str(list_num))
+    return Response(select_all_apply(list_num))
+
+@api_view(['GET'])
+def random_assignment(request,count,list_num):
+    logger.info("random_assignment")
+    logger.info("count -> "+str(count))
+    logger.info("list_num -> " + str(list_num))
+    applies = list(apply_collection.aggregate(
+        [
+            {"$match": {"role": 1}},
+            {"$project": {
+                "_id": 0,
+                "id": 1,
+                "title": 1,
+                "contents": 1,
+                "role": 1,
+                "name": 1,
+                "date": 1
+            }}
+            ,{"$sample":{"size":count}}
+        ]
+    ))
+    logger.info("after random extraction")
+    give_apply_role(applies)
+    logger.info("after give_apply_role ")
     return Response(select_all_apply(list_num))
 
 @api_view(['GET'])
 def firstcome_assignment(request,count,list_num):
+    logger.info("firstcome_assignment")
+    logger.info("count -> " + str(count))
+    logger.info("list_num -> " + str(list_num))
     applies = list(apply_collection.aggregate(
         [
             {"$match": {"role": 1}},
@@ -96,32 +109,30 @@ def firstcome_assignment(request,count,list_num):
             , {"$limit": count}
         ]
     ))
-
-    for apply in applies:
-        apply_collection.update(
-            {
-                "id":apply['id']
-            },
-            {
-                "$set":{
-                    "role":2
-                }
-            }
-        )
-    apply_collection.update(
-        {
-            "role": 1
-        },
-        {
-            "$set": {
-                "role": 3
-            }
-        }
-    )
-
+    logger.info("after firstcome extraction")
+    give_apply_role(applies)
+    logger.info("after give_apply_role")
     return  Response(select_all_apply(list_num))
 
 @api_view(['POST'])
-def one_assignment(request):
+def one_assignment(request,list_num):
+    logger.info("one_assignment")
+    logger.info("list_num -> " + str(list_num))
     json_body = json.loads(request.body.decode("utf-8"))
+    apply_collection.update(
+        {
+            "id": json_body['id']
+        },
+        {
+            "$set": {
+                "role": json_body['role']
+            }
+        }
+    )
+    logger.info("apply_role_update")
+    return Response(select_all_apply(list_num))
+
+@api_view(['POST'])
+def send_admission(request):
+#   파이어베이스 연동
     pass

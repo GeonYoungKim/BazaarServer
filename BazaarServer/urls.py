@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import include,path
 from django.contrib import admin
+from admin.views import send_admission
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     path('user/',include('user.urls')),
     path('seller/',include('seller.urls')),
     path('apply/',include('admin.urls')),
+    path('send/admission',send_admission),
 ]

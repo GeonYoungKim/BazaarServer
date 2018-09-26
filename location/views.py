@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import logging
+
 import pymongo
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -14,6 +16,7 @@ SECTION_C = 'c'
 SECTION_D = 'd'
 SECTION_E = 'e'
 
+logger = logging.getLogger("location")
 
 def get_location_shop(section,list_num):
     shops = list(shop_collection
@@ -44,28 +47,28 @@ def get_location_shop(section,list_num):
 
 @api_view(['GET'])
 def section_a(request, list_num):
-    print('section_a')
+    logger.info('section_a')
     return get_location_shop(SECTION_A,list_num)
 
 @api_view(['GET'])
 def section_b(request, list_num):
-    print('section_b')
+    logger.info('section_b')
     return get_location_shop(SECTION_B, list_num)
 
 
 @api_view(['GET'])
 def section_c(request, list_num):
-    print('section_c')
+    logger.info('section_c')
     return get_location_shop(SECTION_C, list_num)
 
 
 @api_view(['GET'])
 def section_d(request, list_num):
-    print('section_d')
+    logger.info('section_d')
     return get_location_shop(SECTION_D, list_num)
 
 
 @api_view(['GET'])
 def section_e(request, list_num):
-    print('section_e')
+    logger.info('section_e')
     return get_location_shop(SECTION_E, list_num)

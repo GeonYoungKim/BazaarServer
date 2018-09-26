@@ -1,31 +1,35 @@
 import json
-
-from django.shortcuts import render
-
-# Create your views here.
-from django.db import transaction
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from BazaarServer.settings import shop_collection, apply_collection
+import logging
 from datetime import datetime
 
+# Create your views here.
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from BazaarServer.settings import shop_collection, apply_collection
+
+SUCCESS = {"response":"success"}
+logger = logging.getLogger("seller")
+
 @api_view(['GET'])
-def get_goods(request,shop):
+def get_goods(request, shop):
+    logger.info("get_goods")
     data = shop_collection.find_one(
         {
-            "shop":shop
+            "shop": shop
         },
         {
-            "_id":False
+            "_id": False
         }
     )
-    print(data)
     return Response(data)
 
 
 @api_view(['POST'])
 def insert_goods(request):
+    logger.info("insert_goods")
     json_body = json.loads(request.body.decode("utf-8"))
+    logger.info("request body -> "+str(json_body))
     shop = json_body['shop']
     json_body.pop('shop')
     shop_collection.update(
@@ -33,19 +37,21 @@ def insert_goods(request):
             "shop": shop
         },
         {
-        "$push": {
-            "goods": json_body
+            "$push": {
+                "goods": json_body
             }
         }
     )
-    print(json_body)
-    return Response({"response":"success"})
+    return Response(SUCCESS)
+
 
 @api_view(['POST'])
 def apply(request):
+    logger.info("apply")
     now = datetime.now()
     json_body = json.loads(request.body.decode("utf-8"))
-    json_body['date'] = '%s-%s-%s-%s-%s-%s' % ( now.year, now.month, now.day,now.hour,now.minute,now.second )
+    logger.info("request body -> " + str(json_body))
+    json_body['date'] = '%s-%s-%s-%s-%s-%s' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
     json_body['role'] = 1
     apply_collection.insert_one(json_body)
-    return Response({"response":"success"})
+    return Response(SUCCESS)
