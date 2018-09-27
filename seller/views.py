@@ -44,13 +44,12 @@ def insert_goods(request):
         json_body['quantity'] = int(json_body['quantity'])
         json_body['price'] = int(json_body['price'])
         location = json_body['location']
-        image_path = 'static\\bazaar_img\\'+str(location)+"\\" + filename_now + image_uploaded.name
+        image_path = 'static/bazaar_img/'+str(location)+"/" + filename_now + image_uploaded.name
         logger.info("image_path -> "+image_path)
         destination = open(image_path, "wb+")
         for chunk in image_uploaded.chunks():
             destination.write(chunk)
         destination.close()
-        image_path = image_path.replace("\\","/")
         json_body['image']="http://13.125.128.130/"+image_path
         shop = json_body['shop']
         json_body.pop('shop')
