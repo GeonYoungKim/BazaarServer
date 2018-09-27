@@ -34,10 +34,10 @@ def insert_goods(request):
         now = datetime.now()
         filename_now = '%s-%s-%s-%s-%s-%s' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
         image_uploaded = request.FILES["image"]
-        logger.info("insert_goods")
-        logger.info("image_uploaded -> "+ image_uploaded)
         json_body = request.POST.dict()
-        logger.info("request body -> "+str(json_body))
+        logger.info("insert_goods")
+        logger.info("request body -> " + str(json_body))
+        logger.info("image_uploaded -> "+ str(image_uploaded))
         category_list = json.loads(json_body['category'])
         json_body['category'] = category_list
         location = json_body['location']
