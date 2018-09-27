@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37ac9aaf-149f-49a6-9b98-3f5ea8691481" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,14 +46,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="9905" />
+          <entry key="py" value="9949" />
           <entry key="txt" value="397" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="397" />
-          <entry key="Python" value="9905" />
+          <entry key="Python" value="9949" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -101,7 +100,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/admin/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
+                <state relative-caret-position="400">
                   <caret line="185" column="35" selection-start-line="185" selection-start-column="35" selection-end-line="185" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
@@ -147,8 +146,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/seller/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+                <state relative-caret-position="332">
+                  <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -389,7 +388,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.26666668" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.09503546" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -591,7 +590,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="400">
           <caret line="185" column="35" selection-start-line="185" selection-start-column="35" selection-end-line="185" selection-end-column="35" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -622,8 +621,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+        <state relative-caret-position="332">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

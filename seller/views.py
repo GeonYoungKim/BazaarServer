@@ -38,11 +38,14 @@ def insert_goods(request):
         logger.info("insert_goods")
         logger.info("request body -> " + str(json_body))
         logger.info("image_uploaded -> "+ str(image_uploaded))
+
         category_list = json.loads(json_body['category'])
         json_body['category'] = category_list
+        json_body['quantity'] = int(json_body['quantity'])
+        json_body['price'] = int(json_body['price'])
         location = json_body['location']
-        logger.info("request body -> "+str(json_body))
         image_path = 'static\\bazaar_img\\'+str(location)+"\\" + filename_now + image_uploaded.name
+        logger.info("image_path -> "+image_path)
         destination = open(image_path, "wb+")
         for chunk in image_uploaded.chunks():
             destination.write(chunk)
