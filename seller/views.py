@@ -35,15 +35,7 @@ def delete_goods(request):
             {"shop":json_body['shop']},
             {"$pull":{"goods":{"name":json_body['name']}}}
         )
-        data = shop_collection.find_one(
-            {
-                "shop": json_body['shop']
-            },
-            {
-                "_id": False
-            }
-        )
-        return Response(data)
+        return Response(SUCCESS)
     except:
         return Response(FAIL)
 
