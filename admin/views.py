@@ -52,6 +52,7 @@ def give_apply_role(applies):
                 }
             }
         )
+
     apply_collection.update(
         {
             "role": 1
@@ -170,6 +171,7 @@ def one_assignment(request, list_num):
 @api_view(['GET'])
 def send_admission(request):
     # shop goods 초기화
+    logger.info("send_admission")
     shop_collection.update_many(
         {},
         {"$set": {"goods": []}}
@@ -190,7 +192,7 @@ def send_admission(request):
     ))
     location_index = 0
     shop_index = 1
-
+    logger.info("applies role 2 -> "+str(applies))
     for apply in applies:
         if shop_index == 81:
             shop_index = 1
@@ -205,7 +207,7 @@ def send_admission(request):
         }
         )
         shop_index += 1
-
+    logger.info("updated role 2 -> " + str(applies))
     #   파이어베이스 연동
     user_collection.update(
         {"role":1}
@@ -214,12 +216,14 @@ def send_admission(request):
             }
         }
     )
+    logger.info("updated role 3 -> " + str(applies))
     token_list = list(user_collection.find(
         {},
         {"_id":False,
          "role":True,
          "token":True}
     ))
+    logger.info("token_list -> " + str(token_list))
     success_ids = []
     fail_ids = []
     for i in token_list:
@@ -228,6 +232,8 @@ def send_admission(request):
         elif i['role'] == 3:
             fail_ids.append(i['token'])
 
+    logger.info("success_ids -> " + str(success_ids))
+    logger.info("fail_ids -> " + str(fail_ids))
 
     send_fcm_notification(success_ids,"승인","이번 판매자에 당첨되셨습니다.")
     send_fcm_notification(fail_ids,"미승인","이번 판매자에 아쉽게 탈락하셨습니다.")
