@@ -33,24 +33,29 @@ def insert_goods(request):
     try:
         now = datetime.now()
         filename_now = '%s-%s-%s-%s-%s-%s' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
-        image_uploaded = request.FILES["image"]
         json_body = request.POST.dict()
-        logger.info("insert_goods")
-        logger.info("request body -> " + str(json_body))
-        logger.info("image_uploaded -> "+ str(image_uploaded))
-
         category_list = json.loads(json_body['category'])
         json_body['category'] = category_list
         json_body['quantity'] = int(json_body['quantity'])
         json_body['price'] = int(json_body['price'])
         location = json_body['location']
-        image_path = 'static/bazaar_img/'+str(location)+"/" + filename_now + image_uploaded.name
-        logger.info("image_path -> "+image_path)
-        destination = open(image_path, "wb+")
-        for chunk in image_uploaded.chunks():
-            destination.write(chunk)
-        destination.close()
-        json_body['image']="http://13.125.128.130/"+image_path
+
+        logger.info("insert_goods")
+        logger.info("request body -> " + str(json_body))
+
+        if len(request.FILES) > 0:
+            image_uploaded = request.FILES["image"]
+            logger.info("image_uploaded -> " + str(image_uploaded))
+            image_path = 'static/bazaar_img/' + str(location) + "/" + filename_now + image_uploaded.name
+            logger.info("image_path -> " + image_path)
+            destination = open(image_path, "wb+")
+            for chunk in image_uploaded.chunks():
+                destination.write(chunk)
+            destination.close()
+            json_body['image'] = "http://13.125.128.130/" + image_path
+        else:
+            json_body['image'] = "http://13.125.128.130/static/bazaar_img/default.jpg"
+
         shop = json_body['shop']
         json_body.pop('shop')
         json_body.pop('location')
