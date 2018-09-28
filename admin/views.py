@@ -84,7 +84,7 @@ def send_fcm_notification(ids, title, body):
             'body': body
         }
     }
-    print(content)
+    logger.info(str(content))
 
     # json 파싱 후 requests 모듈로 FCM 서버에 요청
     requests.post(url, data=json.dumps(content), headers=headers)
@@ -236,8 +236,11 @@ def send_admission(request):
     logger.info("fail_ids -> " + str(fail_ids))
 
     send_fcm_notification(success_ids,"승인","이번 판매자에 당첨되셨습니다.")
+    logger.info("send success")
     send_fcm_notification(fail_ids,"미승인","이번 판매자에 아쉽게 탈락하셨습니다.")
+    logger.info("send fail")
 
-    apply_collection.delete_many({})
+    apply_collection.remove({})
+    logger.info("remove apply")
 
     return Response(SUCCESS)
