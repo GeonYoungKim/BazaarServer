@@ -54,7 +54,7 @@ def insert_goods(request):
             destination.close()
             json_body['image'] = "http://13.125.128.130/" + image_path
         else:
-            json_body['image'] = "http://13.125.128.130/static/bazaar_img/default.jpg"
+            json_body['image'] = "http://13.125.128.130/static/bazaar_img/default.png"
 
         shop = json_body['shop']
         json_body.pop('shop')

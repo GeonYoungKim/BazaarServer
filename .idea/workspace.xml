@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37ac9aaf-149f-49a6-9b98-3f5ea8691481" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bazaar_img/default.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,14 +47,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="10539" />
+          <entry key="py" value="10542" />
           <entry key="txt" value="397" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="397" />
-          <entry key="Python" value="10539" />
+          <entry key="Python" value="10542" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -147,8 +147,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/seller/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+                <state relative-caret-position="294">
+                  <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="85" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -279,6 +279,12 @@
             <path>
               <item name="BazaarServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BazaarServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bazaar_img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BazaarServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BazaarServer" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -292,16 +298,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\a\140" />
+      <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_image" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img" />
       <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\e" />
       <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\d" />
       <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\c" />
       <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\b" />
-      <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\a\2" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_img\a\140" />
-      <recent name="C:\Users\c2619\Desktop\gunyoungkim\BazaarServer\static\bazaar_image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -622,8 +628,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+        <state relative-caret-position="294">
+          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="85" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
