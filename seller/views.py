@@ -28,6 +28,19 @@ def get_goods(request, shop):
 
 
 @api_view(['POST'])
+def delete_goods(request):
+    json_body = json.loads(request.body.decode("utf-8"))
+    try:
+        shop_collection.update(
+            {"shop":json_body['shop']},
+            {"$pull":{"goods":{"name":json_body['name']}}}
+        )
+        return Response(SUCCESS)
+    except:
+        return Response(FAIL)
+
+
+@api_view(['POST'])
 @parser_classes((FormParser, MultiPartParser))
 def insert_goods(request):
     try:
