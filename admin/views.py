@@ -1,6 +1,6 @@
 import json
 import logging
-
+import requests
 import pymongo
 from django.shortcuts import render
 
@@ -15,7 +15,6 @@ FAIL = {"response": "fail"}
 logger = logging.getLogger("admin")
 
 location = ["a", "b", "c", "d", "e"]
-
 
 def select_all_apply(list_num):
     data = {}
@@ -64,6 +63,30 @@ def give_apply_role(applies):
         }
     )
 
+
+def send_fcm_notification(ids, title, body):
+    # fcm 푸시 메세지 요청 주소
+    url = 'https://fcm.googleapis.com/fcm/send'
+
+    # 인증 정보(서버 키)를 헤더에 담아 전달
+    server_key = "AAAAFPcQCHw:APA91bHyveN1_c7AZ0TWScQrmKMuhrIZNgXFapMBge2RaeAZX3zYyXe5RYFLiUUM0KVyLc_0Gkm4-vA1lR7loUbQiG7EGy5DuchOQqgOq3yfnayghgwRipTRLdxMvmjhwshCoDOjVDUO"
+    headers = {
+        'Authorization': 'key='+server_key,
+        'Content-Type': 'application/json',
+    }
+
+    # 보낼 내용과 대상을 지정
+    content = {
+        'registration_ids': ids,
+        'notification': {
+            'title': title,
+            'body': body
+        }
+    }
+    print(content)
+
+    # json 파싱 후 requests 모듈로 FCM 서버에 요청
+    requests.post(url, data=json.dumps(content), headers=headers)
 
 @api_view(['GET'])
 def get_apply(request, list_num):
@@ -183,6 +206,32 @@ def send_admission(request):
         )
         shop_index += 1
 
-    apply_collection.delete_many({})
     #   파이어베이스 연동
+    user_collection.update(
+        {"role":1}
+        ,{"$set": {
+                "role": 3
+            }
+        }
+    )
+    token_list = list(user_collection.find(
+        {},
+        {"_id":False,
+         "role":True,
+         "token":True}
+    ))
+    success_ids = []
+    fail_ids = []
+    for i in token_list:
+        if i['role'] == 2:
+            success_ids.append(i['token'])
+        elif i['role'] == 3:
+            fail_ids.append(i['token'])
+
+
+    send_fcm_notification(success_ids,"승인","이번 판매자에 당첨되셨습니다.")
+    send_fcm_notification(fail_ids,"미승인","이번 판매자에 아쉽게 탈락하셨습니다.")
+
+    apply_collection.delete_many({})
+
     return Response(SUCCESS)
