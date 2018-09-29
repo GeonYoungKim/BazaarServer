@@ -23,7 +23,7 @@ def search_title_or_contents(keyword,type,list_num):
                 "title": 1,
                 "contents": 1,
                 "files": 1,
-                "date": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}}
+                "date":1
             }}
             , {"$match": {type: {"$regex": keyword}}}
             , {"$sort": {"date": -1}}
@@ -61,7 +61,7 @@ def search_titlecontents(keyword,list_num):
                 "title": 1,
                 "contents": 1,
                 "files": 1,
-                "date": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}},
+                "date":1
             }}
             , {"$match": {"$or": [{"title": {"$regex": keyword}}, {"contents": {"$regex": keyword}}]}}
             , {"$sort": {"date": -1}}
@@ -100,7 +100,7 @@ def get_notice(request, list_num):
                 "title":1,
                 "contents":1,
                 "files":1,
-                 "date":{"$dateToString":{"format":"%Y-%m-%d","date":"$date"}}
+                 "date":1
             }}
         , {"$sort": {"date":-1}}
         , {"$skip": (list_num - 1) * 10}
