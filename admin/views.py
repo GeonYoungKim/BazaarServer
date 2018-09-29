@@ -65,7 +65,7 @@ def give_apply_role(applies):
     )
 
 
-def send_fcm_notification(ids, title, body):
+def send_fcm_notification(ids, title):
     # fcm 푸시 메세지 요청 주소
     url = 'https://fcm.googleapis.com/fcm/send'
 
@@ -75,13 +75,15 @@ def send_fcm_notification(ids, title, body):
         'Authorization': 'key='+server_key,
         'Content-Type': 'application/json',
     }
+    token = ids['token']
+    ids.pop('token')
 
     # 보낼 내용과 대상을 지정
     content = {
-        'registration_ids': ids,
+        'to': token,
         'notification': {
             'title': title,
-            'body': body
+            'body': json.dumps(ids)
         }
     }
     logger.info(str(content))
@@ -221,24 +223,29 @@ def send_admission(request):
         {},
         {"_id":False,
          "role":True,
-         "token":True}
+         "token":True,
+         "shop":True
+         }
     ))
     logger.info("token_list -> " + str(token_list))
     success_ids = []
     fail_ids = []
+
     for i in token_list:
         if i['role'] == 2:
-            success_ids.append(i['token'])
+            success_ids.append(i)
         elif i['role'] == 3:
-            fail_ids.append(i['token'])
+            fail_ids.append(i)
 
     logger.info("success_ids -> " + str(success_ids))
     logger.info("fail_ids -> " + str(fail_ids))
 
-    send_fcm_notification(success_ids,"승인","이번 판매자에 당첨되셨습니다.")
-    logger.info("send success")
-    send_fcm_notification(fail_ids,"미승인","이번 판매자에 아쉽게 탈락하셨습니다.")
-    logger.info("send fail")
+    for i in success_ids:
+        send_fcm_notification(i, "승인")
+
+    for i in fail_ids:
+        send_fcm_notification(i, "미승인")
+
 
     apply_collection.remove({})
     logger.info("remove apply")
