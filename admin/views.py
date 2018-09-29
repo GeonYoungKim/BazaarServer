@@ -241,9 +241,11 @@ def send_admission(request):
     logger.info("fail_ids -> " + str(fail_ids))
 
     for i in success_ids:
+        i['text'] = "바자회에 당첨되셨습니다."
         send_fcm_notification(i, "승인")
 
     for i in fail_ids:
+        i['text']="아쉽게 이번 바자회에 당첨이 안되었습니다."
         send_fcm_notification(i, "미승인")
 
 
