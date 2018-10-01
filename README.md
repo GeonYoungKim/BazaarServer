@@ -6,6 +6,8 @@
 2. 서버 = django, mongodb, fcm연동<br/>
 3. 사용 라이브러리 = glide, retrofit, lombok<br/>
 
+관리자 id = admin<br/>
+관리자 비밀번호 = admin
 
 기능 - 공통
 * 로그인, 로그아웃, 회원가입
